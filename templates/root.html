@@ -1,0 +1,41 @@
+{% block title %}<title>Simple storage api</title>{% endblock %}
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <hr>
+        <h2>Show files</h2>
+        <form action="/store/list" method="GET">
+            <button type="submit" class="btn btn-list">Get files</button>
+        </form>
+        <hr>
+        <h2>Upload file</h2>
+        <form action="/store/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Select file</label>
+                <div class="upload-file">
+                    <input type="file" class="file-input" name="file" id="file">
+                    <label class="file-label" for="file">Select file...</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-upload">Upload</button>
+        </form>
+        <hr>
+        <h2>Download file</h2>
+        <form action="/store/download" method="GET">
+            <label for="download">File hashcode:</label><br>
+            <input type="text" id="download" name="hashcode"><br>
+            <button type="submit" class="btn btn-download">Download</button>
+        </form>
+        <hr>
+        <h2>Delete file</h2>
+        <form action="/store/delete" method="POST" enctype="application/x-www-form-urlencoded">
+            <label for="delete">File hashcode:</label><br>
+            <input type="text" id="delete" name="hashcode"><br>
+            <button type="submit" class="btn btn-delete">Delete</button>
+        </form>
+        <hr>
+    </div>
+  </div>
+</div>
+{% endblock %}
