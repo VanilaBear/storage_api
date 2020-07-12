@@ -29,6 +29,8 @@ def upload_file():
     file = request.files.get("file")
     if request.files and file:
         hashcode = sha1(file.filename.encode()).hexdigest()
+        if check_file_exists(hashcode):
+            return f"File with name {file.filename} already exists", 201
         subpath = os.path.join(app.config["UPLOAD_FOLDER"], hashcode[:2])
         if not os.path.isdir(subpath):
             os.mkdir(subpath)
