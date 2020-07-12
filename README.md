@@ -5,11 +5,11 @@
 ```
 curl -i -X GET localhost:5000/store/list
 ```
-* [GET] /store/upload - upload file
+* [POST] /store/upload - upload file
 ```
 curl -i -X POST -H "Content-Type: multipart/form-data" -F "file=@/home/.../text.txt" localhost:5000/store/upload
 ```
-* [POST] /store/download - download file by hashcode
+* [GET] /store/download - download file by hashcode
 ```
 wget --content-disposition localhost:5000/store/download?hashcode=7d59263317f0fabee60b688f47d88b28507cc4e9 -O filename
 ```
