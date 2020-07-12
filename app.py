@@ -48,8 +48,7 @@ def download():
 
 @app.route('/store/delete', methods=['POST'])
 def delete():
-    # TODO: doesn't work from ui
-    hashcode = request.args.get('hashcode', default='', type=str)
+    hashcode = request.form.get('hashcode')
     file = check_file_exists(hashcode)
     if file:
         os.remove(file)
