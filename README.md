@@ -11,11 +11,11 @@ curl -i -X POST -H "Content-Type: multipart/form-data" -F "file=@/home/.../text.
 ```
 * [POST] /store/download - download file by hashcode
 ```
-curl -i -X POST localhost:5000/store/download?hashcode=6813dcfaae3ebdfc1911b924bf52c80f3bd089ea
+wget --content-disposition localhost:5000/store/download?hashcode=7d59263317f0fabee60b688f47d88b28507cc4e9 -O filename
 ```
 * [POST] /store/delete - delete file by hashcode
 ```
-curl -i -X POST -F "hashcode=d588b803980b40255bcc9711c3a53a33e9e0d1ca" localhost:5000/store/delete
+curl -i -X POST -F "hashcode=7d59263317f0fabee60b688f47d88b28507cc4e9" localhost:5000/store/delete
 ```
 
 ## Simple ui
